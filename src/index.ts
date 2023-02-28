@@ -124,3 +124,144 @@ type ListaMascotas = Array<Mascota>
 const misMascotas: ListaMascotas = ['perro', 'gato']
 
 //podemos crear tipos de datos que acepten dos valores de distinto tipo
+
+//interfacess u objetos
+
+interface Huesped{
+    idhuesped: number
+    nombre: string
+    apellido: string
+    telefono: string
+    email: string
+    direccion: string
+}
+
+type Piso = 'piso 1' | 'piso 2'
+
+interface Habitacion{
+    idhabitacion: number
+    numero: number
+    piso: Piso
+    precioNoche: number
+}
+
+interface Reserva{
+    idreserva: number
+    huesped: Huesped
+    habitacion: Habitacion
+    fechaEntrada: Date
+    fechaSalida: Date
+    noches: number
+}
+
+const datosHuésped: Huesped = {
+    idhuesped: 1,
+    nombre: 'Juan',
+    apellido: 'Perez',
+    telefono: '123456789',
+    email: 'huesped@email.com',
+    direccion: 'Calle 123'
+}
+
+const datosHabitacion: Habitacion = {
+    idhabitacion: 1,
+    numero: 1,
+    piso: 'piso 1',
+    precioNoche: 100
+}
+
+const datosReserva: Reserva = {
+    idreserva: 1,
+    huesped: datosHuésped,
+    habitacion: datosHabitacion,
+    fechaEntrada: new Date(),
+    fechaSalida: new Date(),
+    noches: 1,
+}
+
+console.log(datosReserva)
+
+//interfaces extendidas
+
+interface AA{
+    a: string
+    b: number
+    c: boolean
+}
+
+interface BB extends AA{
+    d: string[]
+}
+
+interface CC{
+    e: string | number
+}
+
+interface DD extends BB, CC{
+    f: number
+}
+
+//contiene todos los tipos de datos de AA, BB, CC y DD
+const datosDD: DD = {
+    a: 'a',
+    b: 1,
+    c: true,
+    d: ['a', 'b', 'c'],
+    e: 'e',
+    f: 1
+}
+
+//enums
+enum Escalon{
+    Primero = 1,
+    Segundo,
+    Tercero
+}
+
+console.log(Escalon.Primero)
+console.log(Escalon.Segundo)
+console.log(Escalon.Tercero)
+
+//los enums siempre van a tener un orden, eso lo diferencia de los objetos y arrays
+
+//tuplas
+const tupla: [string, number, boolean] = ['a', 1, true]
+//define el tipo de dato y la cantidad de elementos que va a tener el arreglo
+
+interface PruebaInterface{
+    a: string
+    b: number
+}
+
+const promesa1 = Promise.resolve<boolean>(true)
+const promesa2 = Promise.resolve<PruebaInterface>({a: 'a', b: 1})
+
+//Se toman todas las promesas resueltas, despues se declara lo que tiene que retornar cada parametro y se muestra por consola
+Promise.all([promesa1, promesa2])
+    .then(([resultado1, resultado2] : [boolean , PruebaInterface]) => {
+        console.log(resultado1, resultado2)
+    })
+
+//tipos literales
+type TipoLiteral = 'a' | 'b' | 'c'
+
+const letra = 'a'
+
+//literalmente se le asignan strings al nuevo tipo y solo se pueden usar esos strings
+//lo mismo con numeros, booleanos, etc
+
+//operador keyof
+interface Persona{
+    nombre: string
+    apellido: string
+    edad: number
+}
+
+const persona1: Persona = {
+    nombre: 'Juan',
+    apellido: 'Perez',
+    edad: 20
+}
+
+const nombrePersona: keyof Persona = 'nombre'
+console.log(nombrePersona)
