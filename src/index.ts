@@ -110,3 +110,17 @@ calcularPromedio(1)
 calcularPromedio([1, 2, 3])
 calcularPromedio([1, 2, 3], 3)
 // calcularPromedio('a')
+
+//alias
+type Perro = 'perro'
+type Gato = 'gato'
+
+type Mascota = Perro | Gato
+
+let miMascota: Mascota = 'perro'
+// miMascota = 'pajaro'
+
+type ListaMascotas = Array<Mascota>
+const misMascotas: ListaMascotas = ['perro', 'gato']
+
+//podemos crear tipos de datos que acepten dos valores de distinto tipo
