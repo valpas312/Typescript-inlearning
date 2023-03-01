@@ -385,3 +385,51 @@ class Auto4{
 
 const auto4 = new Auto4('Ford', 'rojo')
 auto4.hacerMantenimiento(TipoAuto.Deportivo)
+
+//tipos genericos
+function funcionGenerica<T>(arg: T): T{
+    console.log(arg)
+    return arg
+}
+
+const resultado = funcionGenerica('a')
+console.log(resultado)
+
+const resultado2 = funcionGenerica(1)
+console.log(resultado2)
+
+//tipos genericos con interfaces
+interface InterfaceGenerica<T>{
+    id: T
+}
+
+const resultado3: InterfaceGenerica<number> = {
+    id: 1
+}
+
+console.log(resultado3)
+
+//tipos genericos con clases
+type fruta = 'manzana' | 'pera' | 'banana'
+
+class Frutero<T>{
+
+    frutas: T[]
+
+    constructor(frutas: T[]){
+        this.frutas = frutas
+    }
+
+    getFrutas(){
+        return this.frutas
+    }
+
+    setFrutas(frutas: T[]){
+        this.frutas = frutas
+    }
+
+}
+
+const frutero1 = new Frutero<fruta>(['manzana']);
+frutero1.setFrutas(['manzana', 'pera', 'banana'])
+console.log(frutero1.getFrutas())

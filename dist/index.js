@@ -182,4 +182,30 @@ class Auto4 {
 }
 const auto4 = new Auto4('Ford', 'rojo');
 auto4.hacerMantenimiento(TipoAuto.Deportivo);
+function funcionGenerica(arg) {
+    console.log(arg);
+    return arg;
+}
+const resultado = funcionGenerica('a');
+console.log(resultado);
+const resultado2 = funcionGenerica(1);
+console.log(resultado2);
+const resultado3 = {
+    id: 1
+};
+console.log(resultado3);
+class Frutero {
+    constructor(frutas) {
+        this.frutas = frutas;
+    }
+    getFrutas() {
+        return this.frutas;
+    }
+    setFrutas(frutas) {
+        this.frutas = frutas;
+    }
+}
+const frutero1 = new Frutero(['manzana']);
+frutero1.setFrutas(['manzana', 'pera', 'banana']);
+console.log(frutero1.getFrutas());
 //# sourceMappingURL=index.js.map
