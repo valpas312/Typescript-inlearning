@@ -337,3 +337,51 @@ class Auto2 implements AutoInterface{
 
 const auto2 = new Auto2('Ford', 'rojo')
 console.log(auto2.descripcionAuto())
+
+//metodos estaticas
+class Auto3{
+    
+        static marca: string = 'Ford'
+    
+        static descripcionAuto(){
+            return `El auto es de marca ${this.marca}.`
+        }
+}
+
+console.log(Auto3.descripcionAuto())
+
+//sobrecarga de metodos
+
+enum TipoAuto{
+    Deportivo = 'Deportivo',
+    Familiar = 'Familiar'
+}
+
+enum TipoCombustible{
+    Nafta = 'Nafta',
+    Diesel = 'Diesel'
+}
+
+class Auto4{
+    
+        marca: string
+        color: color
+    
+        constructor(marca: string, color: color){
+            this.marca = marca
+            this.color = color
+        }
+    
+        descripcionAuto(){
+            return `El auto es de marca ${this.marca} y es de color ${this.color}.`
+        }
+    
+        hacerMantenimiento(elemento: TipoAuto): void;
+        hacerMantenimiento(elementoCombustible: TipoCombustible): void;
+        hacerMantenimiento(elemento: TipoAuto | TipoCombustible): void{
+            TipoAuto ? console.log('Se hizo mantenimiento al auto') : console.log('Se hizo mantenimiento al motor')
+        }
+}
+
+const auto4 = new Auto4('Ford', 'rojo')
+auto4.hacerMantenimiento(TipoAuto.Deportivo)
