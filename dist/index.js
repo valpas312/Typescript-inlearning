@@ -151,4 +151,35 @@ class Auto2 {
 }
 const auto2 = new Auto2('Ford', 'rojo');
 console.log(auto2.descripcionAuto());
+class Auto3 {
+    static descripcionAuto() {
+        return `El auto es de marca ${this.marca}.`;
+    }
+}
+Auto3.marca = 'Ford';
+console.log(Auto3.descripcionAuto());
+var TipoAuto;
+(function (TipoAuto) {
+    TipoAuto["Deportivo"] = "Deportivo";
+    TipoAuto["Familiar"] = "Familiar";
+})(TipoAuto || (TipoAuto = {}));
+var TipoCombustible;
+(function (TipoCombustible) {
+    TipoCombustible["Nafta"] = "Nafta";
+    TipoCombustible["Diesel"] = "Diesel";
+})(TipoCombustible || (TipoCombustible = {}));
+class Auto4 {
+    constructor(marca, color) {
+        this.marca = marca;
+        this.color = color;
+    }
+    descripcionAuto() {
+        return `El auto es de marca ${this.marca} y es de color ${this.color}.`;
+    }
+    hacerMantenimiento(elemento) {
+        TipoAuto ? console.log('Se hizo mantenimiento al auto') : console.log('Se hizo mantenimiento al motor');
+    }
+}
+const auto4 = new Auto4('Ford', 'rojo');
+auto4.hacerMantenimiento(TipoAuto.Deportivo);
 //# sourceMappingURL=index.js.map
