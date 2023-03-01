@@ -265,3 +265,48 @@ const persona1: Persona = {
 
 const nombrePersona: keyof Persona = 'nombre'
 console.log(nombrePersona)
+
+//clases
+type color = 'rojo' | 'verde' | 'azul'
+
+class Auto{
+
+    _marca: string | undefined
+    _color: color | undefined
+
+
+    constructor(marca: string, color: color){
+        this._marca = marca
+        this._color = color
+    }
+
+    descripcionAuto(){
+        return `El auto es de marca ${this._marca} y es de color ${this._color}. ${this.velocidadAuto()}`
+    }
+
+    protected velocidadAuto(){
+        return 'La velocidad del auto es de 100km/h'
+    }
+}
+
+const auto1 = new Auto('Ford', 'rojo')
+console.log(auto1.descripcionAuto())
+// console.log(auto1.velocidadAuto())
+
+//herencia
+class AutoElectrico extends Auto{
+    
+        _capacidadBateria: number
+    
+        constructor(marca: string, color: color, capacidadBateria: number){
+            super(marca, color)
+            this._capacidadBateria = capacidadBateria
+        }
+    
+        descripcionAuto(){
+            return `El auto es de marca ${this._marca}, es de color ${this._color} y tiene una capacidad de bateria de ${this._capacidadBateria}. ${this.velocidadAuto()}`
+        }
+}
+
+const autoElectrico1 = new AutoElectrico('Tesla', 'verde', 100)
+console.log(autoElectrico1.descripcionAuto())

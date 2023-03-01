@@ -115,4 +115,29 @@ const persona1 = {
 };
 const nombrePersona = 'nombre';
 console.log(nombrePersona);
+class Auto {
+    constructor(marca, color) {
+        this._marca = marca;
+        this._color = color;
+    }
+    descripcionAuto() {
+        return `El auto es de marca ${this._marca} y es de color ${this._color}. ${this.velocidadAuto()}`;
+    }
+    velocidadAuto() {
+        return 'La velocidad del auto es de 100km/h';
+    }
+}
+const auto1 = new Auto('Ford', 'rojo');
+console.log(auto1.descripcionAuto());
+class AutoElectrico extends Auto {
+    constructor(marca, color, capacidadBateria) {
+        super(marca, color);
+        this._capacidadBateria = capacidadBateria;
+    }
+    descripcionAuto() {
+        return `El auto es de marca ${this._marca}, es de color ${this._color} y tiene una capacidad de bateria de ${this._capacidadBateria}. ${this.velocidadAuto()}`;
+    }
+}
+const autoElectrico1 = new AutoElectrico('Tesla', 'verde', 100);
+console.log(autoElectrico1.descripcionAuto());
 //# sourceMappingURL=index.js.map
