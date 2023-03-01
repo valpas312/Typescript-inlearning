@@ -140,4 +140,15 @@ class AutoElectrico extends Auto {
 }
 const autoElectrico1 = new AutoElectrico('Tesla', 'verde', 100);
 console.log(autoElectrico1.descripcionAuto());
+class Auto2 {
+    constructor(marca, color) {
+        this.marca = marca;
+        this.color = color;
+    }
+    descripcionAuto() {
+        return `El auto es de marca ${this.marca} y es de color ${this.color}.`;
+    }
+}
+const auto2 = new Auto2('Ford', 'rojo');
+console.log(auto2.descripcionAuto());
 //# sourceMappingURL=index.js.map
