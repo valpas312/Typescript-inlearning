@@ -433,3 +433,52 @@ class Frutero<T>{
 const frutero1 = new Frutero<fruta>(['manzana']);
 frutero1.setFrutas(['manzana', 'pera', 'banana'])
 console.log(frutero1.getFrutas())
+
+//tipos partial y required
+interface Persona{
+    nombre: string
+    apellido: string
+    edad: number
+    calle?: string
+}
+
+const persona7: Persona = {
+    nombre: 'Juan',
+    apellido: 'Perez',
+    edad: 20
+}
+
+const persona8: Required<Persona> = {
+    nombre: 'Juan',
+    apellido: 'Perez',
+    edad: 20,
+    calle: 'Calle falsa 123'
+}
+
+const persona9: Partial<Persona> = {
+    nombre: 'Juan',
+    apellido: 'Perez',
+    edad: 20
+}
+
+//readonly
+const persona10: Readonly<Persona> = {
+    nombre: 'Juan',
+    apellido: 'Perez',
+    edad: 20
+}
+
+//persona10.nombre = 'Pedro'
+
+//pick y omit
+type PersonaPick = Pick<Persona, 'nombre' | 'apellido'>
+type PersonaOmit = Omit<Persona, 'nombre' | 'apellido'>
+
+const persona11: PersonaPick = {
+    nombre: 'Juan',
+    apellido: 'Perez'
+}
+
+const persona12: PersonaOmit = {
+    edad: 20
+}
