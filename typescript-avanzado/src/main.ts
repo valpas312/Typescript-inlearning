@@ -1,19 +1,9 @@
 import Calculadora from './utils/calc'
+import {Person, Puesto} from './interfaces/persona'
+import {TextoSuperLargo as TextoXL} from './interfaces/texto'
 
 console.log('Hello World')
 
-enum Puesto{
-    Junior = 'Junior',
-    SemiSenior = 'SemiSenior',
-    Senior = 'Senior'
-}
-
-interface Person {
-    nombre: string
-    apellido: string
-    edad: number
-    puesto: Puesto
-}
 
 const persona0: Person = {
     nombre: 'Juan',
@@ -28,3 +18,9 @@ const calculadora = new Calculadora();
 
 console.log(calculadora.sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 console.log(calculadora.restar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+const textoXL: TextoXL = {
+    texto: 'Lorem ipsum dolor sit amet co nsectetur adipisicing elit. Quisquam, quod.'
+}
+
+console.log(textoXL)
