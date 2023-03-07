@@ -5,9 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
+    <script defertype="module" src="./src/main.ts"></script>
+    <link rel="stylesheet" href="./src/style.css">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <form action="" id="form">
+      <label for="name">Nombre de usuario</label>
+      <input type="text" name="name" id="name" />
+      <label for="email">Correo electrónico</label>
+      <input type="text" name="email" id="email" />
+      <input type="submit" value="Submit" />
+    </form>
   </body>
 </html>
