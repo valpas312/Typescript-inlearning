@@ -1,4 +1,4 @@
-export enum Puesto{
+export enum Puesto {
     Junior = 'Junior',
     SemiSenior = 'SemiSenior',
     Senior = 'Senior'
@@ -10,4 +10,3 @@ export interface Person {
     edad: number
     puesto: Puesto
 }
-

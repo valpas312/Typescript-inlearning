@@ -1,6 +1,7 @@
 import Calculadora from './utils/calc'
-import {Person, Puesto} from './interfaces/persona'
-import {TextoSuperLargo as TextoXL} from './interfaces/texto'
+import { Person, Puesto } from './interfaces/persona'
+import { TextoSuperLargo as TextoXL } from './interfaces/texto'
+import { lista } from './assets/lista'
 
 console.log('Hello World')
 
@@ -24,3 +25,5 @@ const textoXL: TextoXL = {
 }
 
 console.log(textoXL)
+
+lista()

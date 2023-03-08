@@ -1,3 +1,3 @@
-export interface TextoSuperLargo{
+export interface TextoSuperLargo {
     texto: string
 }
