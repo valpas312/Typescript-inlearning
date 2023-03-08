@@ -2,6 +2,9 @@ import Calculadora from './utils/calc'
 import { Person, Puesto } from './interfaces/persona'
 import { TextoSuperLargo as TextoXL } from './interfaces/texto'
 import { lista } from './assets/lista'
+import secureTry from './utils/generatos'
+import Dinamicos from './interfaces/dinamicos'
+import DinamicosGenericos from './interfaces/dinamicosGenericos'
 
 console.log('Hello World')
 
@@ -27,3 +30,40 @@ const textoXL: TextoXL = {
 console.log(textoXL)
 
 lista()
+
+console.log(secureTry.next().value)
+console.log(secureTry.next().value)
+console.log(secureTry.next().value)
+console.log(secureTry.next().value)
+
+const dinamicos: Dinamicos = {
+    nombre: 'Juan',
+    apellido: 'Perez',
+    edad: 30,
+    puesto: 'SemiSenior',
+    hijos: {
+        nombre: 'Juan',
+        apellido: 'Perez',
+        edad: 30,
+        puesto: 'SemiSenior',
+    }
+}
+
+console.log(dinamicos)
+
+const dinamicosGenericos1: DinamicosGenericos<string> = {
+    nombre: 'Juan',
+    apellido: 'Perez',
+    edad: '30',
+    puesto: 'SemiSenior'
+}
+
+const dinamicosGenericos2: DinamicosGenericos<number> = {
+    nombre: 1,
+    apellido: 2,
+    edad: 3,
+    puesto: 4
+}
+
+console.log(dinamicosGenericos2)
+console.log(dinamicosGenericos1)
